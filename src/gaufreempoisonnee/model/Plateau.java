@@ -54,7 +54,26 @@ public class Plateau {
     public int getHauteur() {
         return hauteur;
     }
-
+    
+    /**
+     * @param x
+     * @param y
+     * @return la case de coordonnées (x,y)
+     */
+    public Case getCase(int x, int y){
+        return this.plateau[x][y];
+    }
+    
+    /**
+     * Met la case de coordonnées (x,y) à  
+     * @param x
+     * @param y
+     * @param c 
+     */
+    public void setCase(int x, int y, Case c){
+        this.plateau[x][y] = c;
+    }
+    
     /**
      * Met vide la case dévorée de coordonnées (x,y) et les cases à droite et en
      * haut de celle-ci.
