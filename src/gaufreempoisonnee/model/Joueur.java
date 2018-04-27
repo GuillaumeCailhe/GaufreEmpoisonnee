@@ -29,6 +29,7 @@ public abstract class Joueur {
         return idJoueur;
     }
     
+    
     /**
      * Cette fonction gère le coup du joueur en mangeant la pièce de coordonnées (x, y)
      * Effet de bord : met à jour le plateau.
@@ -36,5 +37,7 @@ public abstract class Joueur {
      * @param y
      * @return vrai si le coup est valable, faux sinon
      */
-    public abstract boolean jouerCoup(int x, int y);
+    public boolean jouerCoupPrecis(int x, int y){
+        return plateau.mangerMorceauDeGauffre(x,y);
+    }
 }
