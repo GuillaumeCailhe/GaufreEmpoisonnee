@@ -6,6 +6,7 @@
 package gaufreempoisonnee.model;
 
 import java.util.Arrays;
+import java.util.Hashtable;
 import java.util.StringJoiner;
 
 /**
@@ -14,8 +15,12 @@ import java.util.StringJoiner;
  */
 public class Plateau {
 
+   
     private int largeur, hauteur;
     private Case[][] plateau;
+
+    private Hashtable<Integer, Configuration> hashConfigurations;
+    
 
     /**
      * Constructeur, initialise le plateau avec des cases de gaufre et une case
@@ -39,6 +44,8 @@ public class Plateau {
 
         // On empoisonne la case dans le coin inférieur gauche.
         plateau[hauteur - 1][0] = Case.POISON;
+        
+        hashConfigurations = new Hashtable<Integer, Configuration>();
     }
 
     /**
@@ -83,7 +90,7 @@ public class Plateau {
      * @return true si la gaufre a pu être mangée, faux sinon
      */
     public boolean mangerMorceauDeGauffre(int x, int y) {
-        if (this.plateau[x][y] == Case.GAUFRE) { // On vérifie que la case est bien un morceau de gaufre
+        if (this.plateau[x][y] != Case.VIDE) { // On vérifie que la case est bien un morceau de gaufre
             // On supprime les cases à droite et au dessus de cette case.
             for (int i = x; i >= 0; i--) {
                 for (int j = y; j < this.getLargeur(); j++) {
@@ -112,4 +119,19 @@ public class Plateau {
 
         return sj.toString();
     }
+    
+
+    private NoeudArbre arbreConfiguration(Configuration c){
+        if(!hashConfigurations.contains(c.hashCode())){
+            hashConfigurations.put(c.hashCode(),c);
+        }
+        
+        
+        
+        
+        return null;
+    }
+    
+    
+    
 }
