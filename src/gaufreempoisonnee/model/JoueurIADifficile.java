@@ -3,41 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package gaufreempoisonnee.model;
-import java.util.Random;
+
 /**
  *
- * @author helgr
+ * @author lefebfab
  */
-public class JoueurIAFacile extends Joueur{
-    
-    
-    private Plateau plateau;
-    private int idJoueur;
+public class JoueurIADifficile extends Joueur{
 
-    public JoueurIAFacile(int id, Plateau p) {
-        super(id, p);
-        plateau = p;
-        idJoueur = id;
+    public JoueurIADifficile(int idJoueur, Plateau plateau) {
+        super(idJoueur, plateau);
     }
-    
+
     public boolean jouerCoup() {
-        Random r = new Random();
-        int x, y;
-        if(!(plateau.getCase(plateau.getHauteur()-2, 0) == Case.GAUFRE || plateau.getCase(plateau.getHauteur()-1, 1) == Case.GAUFRE))
-        {
-            x = plateau.getHauteur()-1;
-            y = 0;
-        } else {
-            do {
-                x = r.nextInt(plateau.getHauteur());
-                y = r.nextInt(plateau.getLargeur());
-            }while(!(plateau.getCase(x, y) == Case.GAUFRE));
-        }
-        return jouerCoupPrecis(x,y);
+        return jouerCoupPrecis(0,0);
     }
-
-    
     
 }
