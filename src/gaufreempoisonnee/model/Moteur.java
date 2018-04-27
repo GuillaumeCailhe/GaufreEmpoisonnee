@@ -22,7 +22,7 @@ public class Moteur {
      * @param hauteurPlateau
      * @param largeurPlateau
      */
-    public void Moteur(ModeDeJeu modeDeJeu, int hauteurPlateau, int largeurPlateau) {
+    public Moteur(ModeDeJeu modeDeJeu, int hauteurPlateau, int largeurPlateau) {
         this.modeDeJeu = modeDeJeu;
         this.plateau = new Plateau(hauteurPlateau, largeurPlateau);
     }
@@ -32,8 +32,29 @@ public class Moteur {
      *
      * @param modeDeJeu
      */
-    public void Moteur(ModeDeJeu modeDeJeu) {
-        Moteur(modeDeJeu, 5, 10);
+    public Moteur(ModeDeJeu modeDeJeu) {
+        this(modeDeJeu, 5, 10);
+    }
+
+    /**
+     * @return le joueur 1
+     */
+    public Joueur getJoueur1() {
+        return Joueur1;
+    }
+
+    /**
+     * @return le joueur 2
+     */
+    public Joueur getJoueur2() {
+        return Joueur2;
+    }
+
+    /**
+     * @return le plateau
+     */
+    public Plateau getPlateau() {
+        return plateau;
     }
 
     public boolean estUnePartieGagnee() {
