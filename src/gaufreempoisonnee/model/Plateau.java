@@ -15,12 +15,10 @@ import java.util.StringJoiner;
  */
 public class Plateau {
 
-   
     private int largeur, hauteur;
     private Case[][] plateau;
 
     private Hashtable<Integer, Configuration> hashConfigurations;
-    
 
     /**
      * Constructeur, initialise le plateau avec des cases de gaufre et une case
@@ -30,6 +28,12 @@ public class Plateau {
      * @param hauteur la hauteau du plateau
      */
     public Plateau(int hauteur, int largeur) {
+        // Le plateau doit être positif et pas excessivement grand
+        if (hauteur < 1 || largeur < 1 || hauteur > 20 || largeur > 20) {
+            largeur = 5;
+            hauteur = 10;
+        }
+
         this.largeur = largeur;
         this.hauteur = hauteur;
 
@@ -44,7 +48,7 @@ public class Plateau {
 
         // On empoisonne la case dans le coin inférieur gauche.
         plateau[hauteur - 1][0] = Case.POISON;
-        
+
         hashConfigurations = new Hashtable<Integer, Configuration>();
     }
 
@@ -61,26 +65,34 @@ public class Plateau {
     public int getHauteur() {
         return hauteur;
     }
-    
+
+    /**
+     * @return un tableau bidimensionnel de cases contenant le plateau
+     */
+    public Case[][] getPlateau() {
+        return plateau;
+    }
+
     /**
      * @param x
      * @param y
      * @return la case de coordonnées (x,y)
      */
-    public Case getCase(int x, int y){
+    public Case getCase(int x, int y) {
         return this.plateau[x][y];
     }
-    
+
     /**
-     * Met la case de coordonnées (x,y) à  
+     * Met la case de coordonnées (x,y) à
+     *
      * @param x
      * @param y
-     * @param c 
+     * @param c
      */
-    public void setCase(int x, int y, Case c){
+    public void setCase(int x, int y, Case c) {
         this.plateau[x][y] = c;
     }
-    
+
     /**
      * Met vide la case dévorée de coordonnées (x,y) et les cases à droite et en
      * haut de celle-ci.
@@ -97,7 +109,7 @@ public class Plateau {
                     this.plateau[i][j] = Case.VIDE;
                 }
             }
-            
+
             return true;
         } else {
             return false;
@@ -119,19 +131,13 @@ public class Plateau {
 
         return sj.toString();
     }
-    
 
-    private NoeudArbre arbreConfiguration(Configuration c){
-        if(!hashConfigurations.contains(c.hashCode())){
-            hashConfigurations.put(c.hashCode(),c);
+    private NoeudArbre arbreConfiguration(Configuration c) {
+        if (!hashConfigurations.contains(c.hashCode())) {
+            hashConfigurations.put(c.hashCode(), c);
         }
-        
-        
-        
-        
+
         return null;
     }
-    
-    
-    
+
 }
