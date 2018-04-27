@@ -24,7 +24,7 @@ public class Moteur {
     public Moteur(ModeDeJeu modeDeJeu, int hauteurPlateau, int largeurPlateau) {
         this.plateau = new Plateau(hauteurPlateau, largeurPlateau);
         this.joueur1 = FabriqueJoueur.creerJoueur(1, modeDeJeu, plateau);
-        this.joueur2 = FabriqueJoueur.creerJoueur(1, modeDeJeu, plateau);
+        this.joueur2 = FabriqueJoueur.creerJoueur(2, modeDeJeu, plateau);
     }
 
     /**
