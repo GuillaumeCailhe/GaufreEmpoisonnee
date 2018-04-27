@@ -11,9 +11,8 @@ package gaufreempoisonnee.model;
  */
 public class Moteur {
 
-    private Joueur Joueur1, Joueur2;
+    private Joueur joueur1, joueur2;
     private Plateau plateau;
-    private ModeDeJeu modeDeJeu;
 
     /**
      * Constructeur détaillé avec choix de la taille du plateau
@@ -23,8 +22,9 @@ public class Moteur {
      * @param largeurPlateau
      */
     public Moteur(ModeDeJeu modeDeJeu, int hauteurPlateau, int largeurPlateau) {
-        this.modeDeJeu = modeDeJeu;
         this.plateau = new Plateau(hauteurPlateau, largeurPlateau);
+        this.joueur1 = FabriqueJoueur.creerJoueur(1, modeDeJeu, plateau);
+        this.joueur2 = FabriqueJoueur.creerJoueur(1, modeDeJeu, plateau);
     }
 
     /**
@@ -40,14 +40,14 @@ public class Moteur {
      * @return le joueur 1
      */
     public Joueur getJoueur1() {
-        return Joueur1;
+        return joueur1;
     }
 
     /**
      * @return le joueur 2
      */
     public Joueur getJoueur2() {
-        return Joueur2;
+        return joueur2;
     }
 
     /**
