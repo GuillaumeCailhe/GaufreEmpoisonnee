@@ -14,9 +14,5 @@ public class JoueurHumain extends Joueur{
         super(idJoueur, plateau);
     }
 
-    @Override
-    public boolean jouerCoup(int x, int y) {
-        return plateau.mangerMorceauDeGauffre(x, y);
-    }
-    
+
 }
