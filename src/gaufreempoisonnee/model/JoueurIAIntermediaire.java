@@ -15,11 +15,8 @@ public class JoueurIAIntermediaire extends Joueur{
         super(idJoueur, plateau);
     }
 
-    @Override
-    public boolean jouerCoup(int x, int y) {
-        /* A IMPLEMENTER */
-        
-        return false;
+    public boolean jouerCoup() {
+        return jouerCoupPrecis(0,0);
     }
     
 }
