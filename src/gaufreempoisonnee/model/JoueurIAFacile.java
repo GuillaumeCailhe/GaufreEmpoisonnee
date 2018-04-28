@@ -25,9 +25,9 @@ public class JoueurIAFacile extends Joueur{
     public boolean jouerCoup() {
         Random r = new Random();
         int x, y;
-        if(!(plateau.getCase(plateau.getHauteur()-2, 0) == Case.GAUFRE || plateau.getCase(plateau.getHauteur()-1, 1) == Case.GAUFRE))
+        if(!(plateau.getCase(1, 0) == Case.GAUFRE || plateau.getCase(0, 1) == Case.GAUFRE))
         {
-            x = plateau.getHauteur()-1;
+            x = 0;
             y = 0;
         } else {
             do {
