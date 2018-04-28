@@ -47,7 +47,7 @@ public class Plateau {
         }
 
         // On empoisonne la case dans le coin inférieur gauche.
-        plateau[hauteur - 1][0] = Case.POISON;
+        plateau[0][0] = Case.POISON;
 
         hashConfigurations = new Hashtable<Integer, Configuration>();
     }
@@ -78,8 +78,8 @@ public class Plateau {
      * @param y
      * @return la case de coordonnées (x,y)
      */
-    public Case getCase(int x, int y) {
-        return this.plateau[x][y];
+    public Case getCase(int y, int x) {
+        return this.plateau[y][x];
     }
 
     /**
@@ -89,8 +89,8 @@ public class Plateau {
      * @param y
      * @param c
      */
-    public void setCase(int x, int y, Case c) {
-        this.plateau[x][y] = c;
+    public void setCase(int y, int x, Case c) {
+        this.plateau[y][x] = c;
     }
 
     /**
@@ -101,11 +101,11 @@ public class Plateau {
      * @param y
      * @return true si la gaufre a pu être mangée, faux sinon
      */
-    public boolean mangerMorceauDeGauffre(int x, int y) {
-        if (this.plateau[x][y] != Case.VIDE) { // On vérifie que la case est bien un morceau de gaufre
+    public boolean mangerMorceauDeGauffre(int y, int x) {
+        if (this.plateau[y][x] != Case.VIDE) { // On vérifie que la case est bien un morceau de gaufre
             // On supprime les cases à droite et au dessus de cette case.
-            for (int i = x; i >= 0; i--) {
-                for (int j = y; j < this.getLargeur(); j++) {
+            for (int i = y; i < this.hauteur; i++) {
+                for (int j = x; j < this.largeur; j++) {
                     this.plateau[i][j] = Case.VIDE;
                 }
             }
