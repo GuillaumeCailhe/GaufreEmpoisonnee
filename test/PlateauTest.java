@@ -31,6 +31,8 @@ public class PlateauTest {
     @Parameter(1)
     public int largeur;
 
+    private Plateau plateauTest;
+
     public PlateauTest() {
     }
 
@@ -51,6 +53,12 @@ public class PlateauTest {
 
     @Before
     public void setUp() {
+        if (this.hauteur < 1 || this.largeur < 1 || this.hauteur > 20 || this.largeur > 20) {
+            this.largeur = 5;
+            this.hauteur = 10;
+        }
+
+        plateauTest = new Plateau(this.hauteur, this.largeur);
     }
 
     @After
@@ -69,13 +77,6 @@ public class PlateauTest {
      */
     @Test
     public void testConstructeur() {
-        if (this.hauteur < 1 || this.largeur < 1 || this.hauteur > 20 || this.largeur > 20) {
-            this.largeur = 5;
-            this.hauteur = 10;
-        }
-
-        Plateau plateauTest = new Plateau(this.hauteur, this.largeur);
-
         // Vérification sur la taille attendue du plateau.
         int l = plateauTest.getLargeur();
         int h = plateauTest.getHauteur();
@@ -86,7 +87,7 @@ public class PlateauTest {
         for (int i = 0; i < this.hauteur; i++) {
             for (int j = 0; j < this.largeur; j++) {
                 Case c = plateauTest.getPlateau()[i][j];
-                if (i == this.hauteur - 1 && j == 0) {
+                if (i == 0 && j == 0) {
                     assertEquals(Case.POISON, c);
                 } else {
                     assertEquals(Case.GAUFRE, c);
@@ -96,11 +97,29 @@ public class PlateauTest {
     }
 
     /**
-     *
+     * Test de la fonction manger morceau de gaufre
      */
     @Test
-    public void testMangerMorceauDeGauffre() {
-        /* A IMPLEMENTER */
+    public void testMangerMorceauDeGaufre() {
+        boolean aMangeLaGaufre;
+        // On mange une case quelconque
+        aMangeLaGaufre = plateauTest.mangerMorceauDeGauffre(2, 2);
+        assertEquals(true, aMangeLaGaufre);
+
+        // On mange la même case, désormais vide.
+        aMangeLaGaufre = plateauTest.mangerMorceauDeGauffre(2, 2);
+        assertEquals(false, aMangeLaGaufre);
+
+        // On mange la case empoisonnée.
+        aMangeLaGaufre = plateauTest.mangerMorceauDeGauffre(0, 0);
+        assertEquals(true, aMangeLaGaufre);
+
+        // On mange des cases inaccessibles
+        aMangeLaGaufre = plateauTest.mangerMorceauDeGauffre(-1, -1);
+        assertEquals(false, aMangeLaGaufre);
+
+        aMangeLaGaufre = plateauTest.mangerMorceauDeGauffre(this.hauteur+1, this.largeur+1);
+        assertEquals(false, aMangeLaGaufre);
     }
 
 }

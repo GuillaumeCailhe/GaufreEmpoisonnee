@@ -102,7 +102,7 @@ public class Plateau {
      * @return true si la gaufre a pu être mangée, faux sinon
      */
     public boolean mangerMorceauDeGauffre(int y, int x) {
-        if (this.plateau[y][x] != Case.VIDE) { // On vérifie que la case est bien un morceau de gaufre
+        if (y >= 0 && x >= 0 && y < this.hauteur && x < this.largeur && this.plateau[y][x] != Case.VIDE) { // On vérifie que la case est bien un morceau de gaufre
             // On supprime les cases à droite et au dessus de cette case.
             for (int i = y; i < this.hauteur; i++) {
                 for (int j = x; j < this.largeur; j++) {
