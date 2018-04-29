@@ -97,7 +97,8 @@ public class PlateauTest {
     }
 
     /**
-     * Test de la fonction manger morceau de gaufre
+     * Test de la fonction manger morceau de gaufre en s'assurant :
+     * - que la fonction renvoie bien si le morceau est mangeable ou non
      */
     @Test
     public void testMangerMorceauDeGaufre() {
