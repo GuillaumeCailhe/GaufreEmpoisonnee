@@ -140,4 +140,70 @@ public class Plateau {
         return null;
     }
 
+    /**
+     * 
+     * @param noeud
+     */
+    public void arbreMinMax1(NoeudArbre noeud) {
+        if(noeud.getxJoue() == 0 && noeud.getyJoue() == 0){ // Terminal, le joueur précédent a mangé le poison
+            noeud.setValeur(true);
+        } else {            
+            for (int i = this.hauteur-1; i >= 0; i--) {
+                for (int j = this.largeur-1; j>=0; j--) {
+                    boolean ok = true;
+                    if(i == 0 && j == 0 && noeud.getFils().size() > 0){
+                        ok = false;
+                    }
+                    NoeudArbre pere = noeud;
+                    while(ok && pere != null){
+                        if(i >= pere.getyJoue() && j >= pere.getxJoue()){
+                            ok = false;
+                        }
+                        pere = pere.getPere();
+                    }
+                    if(ok){
+                        NoeudArbre fils = new NoeudArbre(i,j,noeud);
+                        noeud.ajouterFils(fils);
+                        arbreMinMax2(fils);
+                        noeud.setValeur(noeud.getValeur() || fils.getValeur());
+                    }
+                }
+            }
+        }
+    }
+    
+        /**
+     * 
+     * @param noeud
+     */
+    public void arbreMinMax2(NoeudArbre noeud) {
+        if(noeud.getxJoue() == 0 && noeud.getyJoue() == 0){ // Terminal, le joueur précédent a mangé le poison
+            noeud.setValeur(false);
+        } else {   
+            noeud.setValeur(true);
+            for (int i = this.hauteur-1; i >= 0; i--) {
+                for (int j = this.largeur-1; j>=0; j--) {
+                    boolean ok = true;
+                    if(i == 0 && j == 0 && noeud.getFils().size() > 0){
+                        ok = false;
+                    }
+                    NoeudArbre pere = noeud;
+                    while(ok && pere != null){
+                        if(i >= pere.getyJoue() && j >= pere.getxJoue()){
+                            ok = false;
+                        }
+                        pere = pere.getPere();
+                    }
+                    if(ok){
+                        NoeudArbre fils = new NoeudArbre(i,j,noeud);
+                        noeud.ajouterFils(fils);
+                        arbreMinMax1(fils);
+                        noeud.setValeur(noeud.getValeur() && fils.getValeur());
+                    } 
+                }
+            }
+        }
+    }
+
+
 }
