@@ -127,13 +127,6 @@ public class Plateau {
         return sj.toString();
     }
 
-    private NoeudArbre arbreConfiguration(Configuration c) {
-        if (!hashConfigurations.contains(c.hashCode())) {
-            hashConfigurations.put(c.hashCode(), c);
-        }
-
-        return null;
-    }
 
     /**
      * 
