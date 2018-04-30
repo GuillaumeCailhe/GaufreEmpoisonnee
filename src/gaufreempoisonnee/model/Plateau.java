@@ -18,8 +18,6 @@ public class Plateau {
     private int largeur, hauteur;
     private Case[][] plateau;
 
-    private Hashtable<Integer, Configuration> hashConfigurations;
-
     /**
      * Constructeur, initialise le plateau avec des cases de gaufre et une case
      * empoisonnée
@@ -48,8 +46,6 @@ public class Plateau {
 
         // On empoisonne la case dans le coin inférieur gauche.
         plateau[0][0] = Case.POISON;
-
-        hashConfigurations = new Hashtable<Integer, Configuration>();
     }
 
     /**
@@ -109,7 +105,6 @@ public class Plateau {
                     this.plateau[i][j] = Case.VIDE;
                 }
             }
-
             return true;
         } else {
             return false;
