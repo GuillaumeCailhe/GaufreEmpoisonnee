@@ -29,7 +29,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Gaufre empoisonnée");
+        this.primaryStage.setTitle("Gaufre empoisonnÃ©e");
         
         nombreTour = 0;
         
@@ -37,7 +37,7 @@ public class MainApp extends Application {
     }
 
     /**
-     * Affiche la fenêtre du menu principal.
+     * Affiche la fenÃªtre du menu principal.
      */
     public void afficherMenu() {
         try {
@@ -46,7 +46,7 @@ public class MainApp extends Application {
             loader.setLocation(MainApp.class.getResource("view/Menu.fxml"));
             AnchorPane menu = (AnchorPane) loader.load();
 
-            // On charge la scène
+            // On charge la scÃ¨ne
             Scene scene = new Scene(menu);
             primaryStage.setScene(scene);
 
@@ -60,7 +60,7 @@ public class MainApp extends Application {
     }
 
     /**
-     * Affiche la fenêtre du choix du mode de jeu.
+     * Affiche la fenÃªtre du choix du mode de jeu.
      */
     public void afficherChoixDuMode() {
         try {
@@ -69,7 +69,7 @@ public class MainApp extends Application {
             loader.setLocation(MainApp.class.getResource("view/ChoixDuMode.fxml"));
             AnchorPane menu = (AnchorPane) loader.load();
 
-            // On charge la scène
+            // On charge la scÃ¨ne
             Scene scene = new Scene(menu);
             primaryStage.setScene(scene);
 
@@ -83,7 +83,7 @@ public class MainApp extends Application {
     }
     
     /**
-     * Affiche la fenêtre du plateau.
+     * Affiche la fenÃªtre du plateau.
      */
     public void afficherPlateau(){
         try {
@@ -92,7 +92,7 @@ public class MainApp extends Application {
             loader.setLocation(MainApp.class.getResource("view/Plateau.fxml"));
             AnchorPane menu = (AnchorPane) loader.load();
 
-            // On charge la scène
+            // On charge la scÃ¨ne
             Scene scene = new Scene(menu);
             primaryStage.setScene(scene);
 
@@ -106,7 +106,7 @@ public class MainApp extends Application {
     }
     
     /**
-     * Met le moteur à jour
+     * Met le moteur Ã  jour
      * @param modeDeJeu le mode de jeu
      */
     public void lancerPartie(ModeDeJeu modeDeJeu) {
