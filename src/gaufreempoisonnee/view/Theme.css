@@ -1,0 +1,17 @@
+.gaufre{
+    -fx-background-color:#FFFFE0;
+    -fx-border-color: black;
+}
+
+.gaufre:hover{
+    -fx-background-color:#FFFACD;
+}
+
+.poison{
+    -fx-background-color: #9ACD32;
+    -fx-border-color: black;
+}
+
+.poison:hover{
+    -fx-background-color: #ADFF2F;
+}
