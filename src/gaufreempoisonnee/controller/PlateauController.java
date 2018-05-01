@@ -8,7 +8,14 @@ package gaufreempoisonnee.controller;
 import gaufreempoisonnee.MainApp;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.GridPane;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -17,6 +24,8 @@ import javafx.fxml.Initializable;
  */
 public class PlateauController implements Initializable {
 
+    @FXML
+    private GridPane gaufre;
     private MainApp mainApp;
 
     /**
@@ -24,7 +33,27 @@ public class PlateauController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent e) {
+                Node source = (Node) e.getSource();
+                Integer colIndex = GridPane.getColumnIndex(source);
+                Integer rowIndex = GridPane.getRowIndex(source);
+                mainApp.gererCoup(colIndex,rowIndex);
+            }
+        };
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 5; j++) {
+                Button button = new Button();
+                button.setMinWidth(137);
+                button.setMinHeight(88);
+                button.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+                
+                gaufre.add(button, j, i);
+            }
+        }
+
     }
 
     /**
@@ -36,5 +65,4 @@ public class PlateauController implements Initializable {
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
-
 }

@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  * @author helgr
  */
 public class MainApp extends Application {
-
+    private int nombreTour;
     private Moteur moteur;
     private Stage primaryStage;
 
@@ -30,7 +30,9 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Gaufre empoisonnée");
-
+        
+        nombreTour = 0;
+        
         afficherMenu();
     }
 
@@ -110,7 +112,6 @@ public class MainApp extends Application {
     public void lancerPartie(ModeDeJeu modeDeJeu) {
         this.moteur = new Moteur(modeDeJeu);
         afficherPlateau();
-        
     }
 
     /**
@@ -119,5 +120,14 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    
+    /**
+     * Joue le coup du joeur dont c'est le tour ou du joueur et de l'IA.
+     * @param y
+     * @param x 
+     */
+    public void gererCoup(int y, int x) {
+        moteur.jouerCoup((nombreTour%1)+1, y, x);
+        nombreTour++;
+    }
 }
