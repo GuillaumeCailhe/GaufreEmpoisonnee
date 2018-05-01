@@ -154,6 +154,9 @@ public class Plateau {
                         noeud.ajouterFils(fils);
                         arbreMinMax2(fils);
                         noeud.setValeur(noeud.getValeur() || fils.getValeur());
+                        if(noeud.getValeur()){ // Optimisation, on a déjà trouvé une branche victorieuse.
+                            return;
+                        }
                     }
                 }
             }
