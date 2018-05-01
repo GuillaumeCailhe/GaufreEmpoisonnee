@@ -57,8 +57,8 @@ public class PlateauController implements Initializable {
     }
 
     /**
-     * Est appelée par le contrôleur principal pour envoyer une référence vers
-     * lui-même.
+     * Est appelÃ©e par le contrÃ´leur principal pour envoyer une rÃ©fÃ©rence vers
+     * lui-mÃªme.
      *
      * @param mainApp
      */
