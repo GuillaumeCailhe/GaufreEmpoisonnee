@@ -77,7 +77,6 @@ public class Moteur {
         // Calcul du coup de l'IA
         switch(modeDeJeu){
             case JOUEUR_CONTRE_IA_FACILE:
-                ((JoueurIAFacile) joueur2).ajouterCoup(y,x);
                 ((JoueurIAFacile) joueur2).jouerCoup();
                 break;
             case JOUEUR_CONTRE_IA_INTERMEDIAIRE:
