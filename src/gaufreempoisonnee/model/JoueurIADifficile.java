@@ -28,7 +28,7 @@ public class JoueurIADifficile extends Joueur{
         int y, x;
         Random r = new Random();
         
-        if(plateau.getCase(3,3) == Case.VIDE){ // Si le terrain est suffisament petit pour le min max
+        if(plateau.getCase(3,4) == Case.VIDE  /*&& (plateau.getCase(0,4) == Case.VIDE || plateau.getCase(4,0) == Case.VIDE)*/){ // Si le terrain est suffisament petit pour le min max
             if(!modeMinMax){
                 modeMinMax = true;
                 plateau.arbreMinMax1(minMax);
@@ -49,16 +49,15 @@ public class JoueurIADifficile extends Joueur{
 
             } else { // OH MON DIEU JE VAIS MOURIR, JE VAIS DEVOIR MANGER DU POISON :'(
                 System.out.println("Je vais perdre :c");
-                System.out.println(minMax);
                 int i = r.nextInt(minMax.getFils().size());
                 y = minMax.getFils().get(i).getyJoue();
                 x = minMax.getFils().get(i).getxJoue();
             }    
         } else { // terrain enc1ore trop grand, l'IA va chercher à le réduire
             do {
-                y = r.nextInt(plateau.getHauteur()-3)+3;
-                x = r.nextInt(plateau.getLargeur()-3)+3;
-            } while(plateau.getCase(y,x) == Case.VIDE);
+                y = r.nextInt(plateau.getHauteur());
+                x = r.nextInt(plateau.getLargeur());
+            } while((y < 3 && x < 4) || plateau.getCase(y,x) == Case.VIDE);
         }
         
         System.out.println("Je joue en : " + y + "-" + x);
@@ -82,4 +81,9 @@ public class JoueurIADifficile extends Joueur{
             minMax = f;
         }        
     }
+    
+    public int[] dernierJoue(){
+        return new int[] {minMax.getyJoue(), minMax.getxJoue()};
+    }
+    
 }
