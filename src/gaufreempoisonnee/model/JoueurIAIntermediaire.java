@@ -36,19 +36,16 @@ public class JoueurIAIntermediaire extends Joueur{
             Hashtable<Boolean, ArrayList<NoeudArbre>> m = minMax.getFilsVictorieux();
             if(m.get(true).size() > 0 || m.get(false).size() > 0){
                 if(m.get(true).size() > 0 && r.nextBoolean()) { // On peut entrer dans une configuration gagnante ! Victoire :D
-                    System.out.println("je gagne !");
                     int i = r.nextInt(m.get(true).size());
                     y = m.get(true).get(i).getyJoue();
                     x = m.get(true).get(i).getxJoue();
                 } else { // meh. pas gagnant mais pas perdant non plus
-                    System.out.println("Je peut gagner !");
                     int i = r.nextInt(m.get(false).size());
                     y = m.get(false).get(i).getyJoue();
                     x = m.get(false).get(i).getxJoue();
                 }
 
             } else { // OH MON DIEU JE VAIS MOURIR, JE VAIS DEVOIR MANGER DU POISON :'(
-                System.out.println("Je vais perdre :c");
                 int i = r.nextInt(minMax.getFils().size());
                 y = minMax.getFils().get(i).getyJoue();
                 x = minMax.getFils().get(i).getxJoue();
