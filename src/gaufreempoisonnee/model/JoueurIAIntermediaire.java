@@ -28,8 +28,7 @@ public class JoueurIAIntermediaire extends Joueur{
         int y, x;
         Random r = new Random();
         
-        if(plateau.getCase(3,4) == Case.VIDE /* && (plateau.getCase(0,4) == Case.VIDE || plateau.getCase(4,0) == Case.VIDE)*/){ // Si le terrain est suffisament petit pour le min max
-            System.out.println("test");
+        if(plateau.getCase(3,4) == Case.VIDE  && (plateau.getCase(0,4) == Case.VIDE || plateau.getCase(3,0) == Case.VIDE)){ // Si le terrain est suffisament petit pour le min max
             if(!modeMinMax){
                 modeMinMax = true;
                 plateau.arbreMinMax1(minMax);
