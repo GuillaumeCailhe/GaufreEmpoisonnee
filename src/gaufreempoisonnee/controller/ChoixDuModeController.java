@@ -53,8 +53,8 @@ public class ChoixDuModeController implements Initializable {
     }
 
     /**
-     * Est appelée par le contrôleur principal pour envoyer une référence vers
-     * lui-même.
+     * Est appelÃ©e par le contrÃ´leur principal pour envoyer une rÃ©fÃ©rence vers
+     * lui-mÃªme.
      *
      * @param mainApp
      */
@@ -63,7 +63,7 @@ public class ChoixDuModeController implements Initializable {
     }
 
     /**
-     * Ramène au menu. Est appellée lors du clic sur le bouton retour.
+     * RamÃ¨ne au menu. Est appellÃ©e lors du clic sur le bouton retour.
      */
     @FXML
     private void traiterRetour() {
@@ -71,7 +71,7 @@ public class ChoixDuModeController implements Initializable {
     }
 
     /**
-     * Initialise le moteur selon les paramètres choisis sur les radiobuttons.
+     * Initialise le moteur selon les paramÃ¨tres choisis sur les radiobuttons.
      */
     @FXML
     private void traiterCommencer() {
@@ -91,7 +91,7 @@ public class ChoixDuModeController implements Initializable {
     }
 
     /**
-     * Cache les choix de difficulté relatifs à l'IA.
+     * Cache les choix de difficultÃ© relatifs Ã  l'IA.
      */
     @FXML
     private void cacherChoixDifficulte() {
@@ -99,7 +99,7 @@ public class ChoixDuModeController implements Initializable {
     }
 
     /**
-     * Affiche les choix de difficulté relatifs à l'IA.
+     * Affiche les choix de difficultÃ© relatifs Ã  l'IA.
      */
     @FXML
     private void afficherChoixDifficulte() {
