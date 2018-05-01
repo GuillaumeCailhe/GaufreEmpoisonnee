@@ -15,7 +15,7 @@ public class Moteur {
     private Plateau plateau;
 
     /**
-     * Constructeur détaillé avec choix de la taille du plateau
+     * Constructeur dÃ©taillÃ© avec choix de la taille du plateau
      *
      * @param modeDeJeu
      * @param hauteurPlateau
@@ -29,7 +29,7 @@ public class Moteur {
     }
 
     /**
-     * Constructeur par défaut
+     * Constructeur par dÃ©faut
      *
      * @param modeDeJeu
      */
@@ -61,10 +61,10 @@ public class Moteur {
     /**
      * Joue le coup d'un joueur humain
      *
-     * @param idJoueur le numéro du joueur (1 ou 2)
-     * @param x première coordonnée
-     * @param y deuxième coordonnée
-     * @return vrai si le coup a pu être joué, faux sinon
+     * @param idJoueur le numÃ©ro du joueur (1 ou 2)
+     * @param x premiÃ¨re coordonnÃ©e
+     * @param y deuxiÃ¨me coordonnÃ©e
+     * @return vrai si le coup a pu Ãªtre jouÃ©, faux sinon
      */
     public boolean jouerCoup(int idJoueur, int x, int y) {
         Joueur joueur = joueur1;
@@ -93,10 +93,10 @@ public class Moteur {
     }
 
     /**
-     * Renvoie vraie si la partie est terminée, c'est à dire que la case
-     * empoisonnée a été mangée.
+     * Renvoie vraie si la partie est terminÃ©e, c'est Ã  dire que la case
+     * empoisonnÃ©e a Ã©tÃ© mangÃ©e.
      *
-     * @return vrai si la partie est terminée, faux sinon.
+     * @return vrai si la partie est terminÃ©e, faux sinon.
      */
     public boolean estUnePartieTerminee() {
         return this.plateau.getPlateau()[0][0] == Case.VIDE;
