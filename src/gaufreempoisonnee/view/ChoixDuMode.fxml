@@ -43,7 +43,7 @@
                   <ToggleGroup fx:id="toggleGroupDifficulte" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="boutonIAIntermediaire" layoutX="66.0" layoutY="117.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="IntermÃ©diaire" textAlignment="CENTER" toggleGroup="$toggleGroupDifficulte">
+            <RadioButton fx:id="boutonIAIntermediaire" layoutX="66.0" layoutY="117.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="Intermédiaire" textAlignment="CENTER" toggleGroup="$toggleGroupDifficulte">
                <font>
                   <Font size="24.0" />
                </font>
