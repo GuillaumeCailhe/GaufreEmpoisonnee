@@ -37,7 +37,7 @@ public abstract class Joueur {
      * @param y
      * @return vrai si le coup est valable, faux sinon
      */
-    public boolean jouerCoupPrecis(int x, int y){
-        return plateau.mangerMorceauDeGauffre(x,y);
+    public boolean jouerCoupPrecis(int y, int x){
+        return plateau.mangerMorceauDeGauffre(y,x);
     }
 }
