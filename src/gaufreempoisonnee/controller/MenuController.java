@@ -22,7 +22,7 @@ public class MenuController implements Initializable {
     private MainApp mainApp;
 
     /**
-     * Initialise la classe du contrôleur.
+     * Initialise la classe du contrÃ´leur.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -30,7 +30,7 @@ public class MenuController implements Initializable {
     }
 
     /**
-     * Lance la fenêtre de choix du mode de jeu. Appelé lors du clic sur le
+     * Lance la fenÃªtre de choix du mode de jeu. AppelÃ© lors du clic sur le
      * bouton "Jouer".
      */
     @FXML
@@ -39,7 +39,7 @@ public class MenuController implements Initializable {
     }
 
     /**
-     * Quitte l'application. Appelé lors du clic sur le bouton "Quitter".
+     * Quitte l'application. AppelÃ© lors du clic sur le bouton "Quitter".
      */
     @FXML
     private void traiterQuitter() {
@@ -47,8 +47,8 @@ public class MenuController implements Initializable {
     }
 
     /**
-     * Est appelée par le contrôleur principal pour envoyer une référence vers
-     * lui-même.
+     * Est appelÃ©e par le contrÃ´leur principal pour envoyer une rÃ©fÃ©rence vers
+     * lui-mÃªme.
      *
      * @param mainApp
      */
