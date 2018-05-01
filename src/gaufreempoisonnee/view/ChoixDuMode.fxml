@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gaufreempoisonnee.controller.ChoixDuModeController">
+   <children>
+      <Pane layoutX="254.0" layoutY="14.0" prefHeight="206.0" prefWidth="289.0">
+         <children>
+            <RadioButton fx:id="boutonMode1joueur" layoutX="66.0" layoutY="82.0" mnemonicParsing="false" onAction="#afficherChoixDifficulte" prefHeight="35.0" prefWidth="158.0" text="1 Joueur" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleGroupNombreJoueurs" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="boutonMode2joueurs" layoutX="66.0" layoutY="140.0" mnemonicParsing="false" onAction="#cacherChoixDifficulte" prefHeight="35.0" prefWidth="158.0" text="2 Joueurs" textAlignment="CENTER" toggleGroup="$toggleGroupNombreJoueurs">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <Label alignment="CENTER" layoutX="28.0" layoutY="14.0" text="Choix du mode de jeu" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="paneDifficulteIA" layoutX="254.0" layoutY="229.0" prefHeight="227.0" prefWidth="289.0">
+         <children>
+            <RadioButton fx:id="boutonIAFacile" layoutX="66.0" layoutY="63.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="Facile" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleGroupDifficulte" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="boutonIAIntermediaire" layoutX="66.0" layoutY="117.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="Intermédiaire" textAlignment="CENTER" toggleGroup="$toggleGroupDifficulte">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="61.0" layoutY="14.0" prefHeight="35.0" prefWidth="178.0" text="Difficulté de l'IA" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="boutonIADifficile" layoutX="66.0" layoutY="170.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="Difficile" textAlignment="CENTER" toggleGroup="$toggleGroupDifficulte">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </Pane>
+      <ButtonBar layoutX="56.0" layoutY="518.0" prefHeight="68.0" prefWidth="684.0">
+        <buttons>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#traiterRetour" prefHeight="50.0" prefWidth="137.0" text="Retour" translateX="-390.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+          <Button mnemonicParsing="false" onAction="#traiterCommencer" prefHeight="50.0" prefWidth="137.0" text="Commencer" translateX="-10.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+        </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>

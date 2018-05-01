@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gaufreempoisonnee.controller.MenuController">
+   <children>
+      <Button layoutX="196.0" layoutY="288.0" mnemonicParsing="false" onAction="#traiterJouer" prefHeight="25.0" prefWidth="65.0" scaleX="2.0" scaleY="2.0" text="Jouer" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="288.0" />
+      <Button layoutX="560.0" layoutY="288.0" mnemonicParsing="false" onAction="#traiterQuitter" prefHeight="25.0" prefWidth="65.0" scaleX="2.0" scaleY="2.0" text="Quitter" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="288.0" />
+   </children>
+</AnchorPane>
